@@ -1,0 +1,17 @@
+[loginsProperty]AUTOMATON::> loginsProperty() STATE::>loginPage
+Successfully logged in
+[loginsProperty]MOVED ON METHODCALL: void main.Login.goodLogin() TO STATE::> alertsPage
+[loginsProperty]AUTOMATON::> loginsProperty() STATE::>alertsPage
+[loginsProperty]AUTOMATON::> loginsProperty() STATE::>alertsPage
+Logged out
+[loginsProperty]MOVED ON METHODCALL: void main.Login.logout() TO STATE::> loginPage
+[loginsProperty]AUTOMATON::> loginsProperty() STATE::>loginPage
+Successfully logged in
+[loginsProperty]MOVED ON METHODCALL: void main.Login.goodLogin() TO STATE::> alertsPage
+[loginsProperty]AUTOMATON::> loginsProperty() STATE::>alertsPage
+[loginsProperty]AUTOMATON::> loginsProperty() STATE::>alertsPage
+Logged out
+[loginsProperty]MOVED ON METHODCALL: void main.Login.logout() TO STATE::> loginPage
+[loginsProperty]AUTOMATON::> loginsProperty() STATE::>loginPage
+Successfully logged in
+[loginsProperty]MOVED ON METHODCALL: void main.Login.goodLogin() TO STATE::> alertsPage

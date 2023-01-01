@@ -1,0 +1,36 @@
+
+
+GLOBAL { 
+	VARIABLES { 
+	}
+	
+	EVENTS {
+		invalidLogin() = {*.invalidLogin()}
+		goodLogin() = {*.goodLogin()}
+		viewAlerts() = {*.viewAlerts()}
+		logout() = {*.logout()}
+	}
+	
+	PROPERTY loginsProperty {
+		STATES {
+			ACCEPTING { 
+				
+			}
+			BAD {
+				
+			}
+			NORMAL {
+				alertsPage
+			}
+			STARTING { 
+				loginPage
+			}
+		}
+		
+		TRANSITIONS { 
+			loginPage -> loginPage [invalidLogin\\System.out.println("Login failed. Invalid Id");]
+			loginPage -> alertsPage [goodLogin\\ System.out.println("Successfully logged in");]
+			alertsPage -> loginPage [logout\\ System.out.println("Logged out");]
+		}
+	}
+}

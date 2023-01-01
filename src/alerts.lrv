@@ -1,0 +1,52 @@
+
+
+GLOBAL { 
+	VARIABLES { 
+	}
+	
+	EVENTS {
+		viewAlerts() = {*.viewAlerts()}
+		createAlert() = {*.createAlert()}
+		createAlertInvalid() = {*.createAlertInvalid()}
+		deleteAlerts() = {*.deleteAlerts()}	
+		deleteAlertsInvalid() = {*.deleteAlertsInvalid()}
+	}
+	
+	PROPERTY loginsProperty {
+		STATES {
+			ACCEPTING { 
+			}
+			BAD {
+				badApiCall
+			}
+			NORMAL {
+				apiCall
+			}
+			STARTING { 
+				alertsPage
+			}
+		}
+		
+		TRANSITIONS { 
+			alertsPage -> alertsPage [viewAlerts\\System.out.println("Displaying alerts");]
+			alertsPage -> apiCall [createAlert\\System.out.println("Successfully created an alert");]
+			alertsPage -> apiCall [deleteAlerts\\System.out.println("Successfully deleted all alerts");]
+			alertsPage -> badApiCall [createAlertInvalid\\ System.out.println("Bad state! Failed to create an alert");]
+			alertsPage -> badApiCall [deleteAlertsInvalid\\ System.out.println("Bad State! Failed to delete all alerts");]
+			
+			apiCall -> alertsPage [viewAlerts\\System.out.println("Displaying alerts");]
+			apiCall -> apiCall [createAlert\\System.out.println("Successfully created an alert");]
+			apiCall -> apiCall [deleteAlerts\\System.out.println("Successfully deleted all alerts");]
+			apiCall -> badApiCall [createAlertInvalid\\ System.out.println("Bad state! Failed to create an alert");]
+			apiCall -> badApiCall [deleteAlertsInvalid\\ System.out.println("Bad State! Failed to delete all alerts");]
+			
+			
+			badApiCall -> alertsPage [viewAlerts\\System.out.println("Displaying alerts");]
+			badApiCall -> apiCall [createAlert\\System.out.println("Successfully created an alert");]
+			badApiCall -> apiCall [deleteAlerts\\System.out.println("Successfully deleted all alerts");]
+			badApiCall -> badApiCall [createAlertInvalid\\ System.out.println("Bad State! Failed to create an alert");]
+			badApiCall -> badApiCall [deleteAlertsInvalid\\ System.out.println("Bad State! Failed to delete all alerts");]
+			
+		}
+	}
+}

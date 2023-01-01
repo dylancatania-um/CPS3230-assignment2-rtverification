@@ -1,0 +1,9 @@
+digraph _logic_loginsProperty {
+rankdir=LR;
+node [shape = circle]; alertsPage loginPage;
+node [shape = point]; _s_s;
+_s_s -> loginPage;
+alertsPage -> loginPage [ label = "(1) logout\\\\System . out . println ( \" Logged out \" ) ; "];
+loginPage -> loginPage [ label = "(1) invalidLogin\\\\System . out . println ( \" Login failed. Invalid Id \" ) ; "];
+loginPage -> alertsPage [ label = "(2) goodLogin\\\\System . out . println ( \" Successfully logged in \" ) ; "];
+}
