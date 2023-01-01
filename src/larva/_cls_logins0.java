@@ -81,7 +81,7 @@ else if (no_automata < 0)
 }catch(Exception ex){ex.printStackTrace();}
 }
 
-int _state_id_loginsProperty = 112;
+int _state_id_loginsProperty = 114;
 
 public void _performLogic_loginsProperty(String _info, int... _event) {
 
@@ -89,27 +89,27 @@ _cls_logins0.pw.println("[loginsProperty]AUTOMATON::> loginsProperty("+") STATE:
 _cls_logins0.pw.flush();
 
 if (0==1){}
-else if (_state_id_loginsProperty==111){
+else if (_state_id_loginsProperty==113){
 		if (1==0){}
-		else if ((_occurredEvent(_event,394/*logout*/))){
+		else if ((_occurredEvent(_event,402/*logout*/))){
 		_cls_logins0.pw .println ("Logged out");
 
-		_state_id_loginsProperty = 112;//moving to state loginPage
+		_state_id_loginsProperty = 114;//moving to state loginPage
 		_goto_loginsProperty(_info);
 		}
 }
-else if (_state_id_loginsProperty==112){
+else if (_state_id_loginsProperty==114){
 		if (1==0){}
-		else if ((_occurredEvent(_event,388/*invalidLogin*/))){
+		else if ((_occurredEvent(_event,396/*invalidLogin*/))){
 		_cls_logins0.pw .println ("Login failed. Invalid Id");
 
-		_state_id_loginsProperty = 112;//moving to state loginPage
+		_state_id_loginsProperty = 114;//moving to state loginPage
 		_goto_loginsProperty(_info);
 		}
-		else if ((_occurredEvent(_event,390/*goodLogin*/))){
+		else if ((_occurredEvent(_event,398/*goodLogin*/))){
 		_cls_logins0.pw .println ("Successfully logged in");
 
-		_state_id_loginsProperty = 111;//moving to state alertsPage
+		_state_id_loginsProperty = 113;//moving to state alertsPage
 		_goto_loginsProperty(_info);
 		}
 }
@@ -122,8 +122,8 @@ _cls_logins0.pw.flush();
 
 public String _string_loginsProperty(int _state_id, int _mode){
 switch(_state_id){
-case 111: if (_mode == 0) return "alertsPage"; else return "alertsPage";
-case 112: if (_mode == 0) return "loginPage"; else return "loginPage";
+case 113: if (_mode == 0) return "alertsPage"; else return "alertsPage";
+case 114: if (_mode == 0) return "loginPage"; else return "loginPage";
 default: return "!!!SYSTEM REACHED AN UNKNOWN STATE!!!";
 }
 }

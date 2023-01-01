@@ -45,9 +45,11 @@ public class Login {
 
         String loginTitle = driver.getCurrentUrl();
         Assert.assertEquals("https://www.marketalertum.com/Alerts/Login", loginTitle);
+        System.out.println("logged in failed");
 	}
 	
 	void logout() {
+		setup();
         driver.get("https://www.marketalertum.com/Alerts/List");
 
        //in order to first log out, you need to log in
@@ -58,6 +60,7 @@ public class Login {
         
         String loginTitle = driver.getCurrentUrl();
         Assert.assertEquals("https://www.marketalertum.com/", loginTitle);
+        System.out.println("successfully logged out");
 	}
 	
 	public static int read()
